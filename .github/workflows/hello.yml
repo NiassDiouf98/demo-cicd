@@ -1,0 +1,13 @@
+name: Hello CI # nom de votre workflow
+
+on:
+  push:
+    branches: [ main ] # déclenche le workflow à chaque push sur la branche main
+  workflow_dispatch: # permet de déclencher manuellement le workflow depuis l'interface GitHub
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # utilise une machine virtuelle avec Ubuntu
+    steps:
+      - name: Afficher un message # nom de l'étape
+        run: echo "CI/CD déclenché automatiquement !" # commande à exécuter, ici afficher un message dans la console
